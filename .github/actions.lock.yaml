@@ -1,28 +1,28 @@
 version: 1
-generated_at: 2026-05-25T15:59:26Z
+generated_at: 2026-06-11T15:41:12Z
 internal: []
 trusted:
   - action: actions/checkout
     refs:
-      - v3
-      - v4
+      - 34e114876b0b11c390a56381ad16ebd13914f8d5
+      - f43a0e5ff2bd294095638e18286ca9a3d1956744
     occurrences:
-      v4:
+      34e114876b0b11c390a56381ad16ebd13914f8d5:
         .github/workflows/cd.yaml:
           - jobs.publish-binary.steps.[0].uses
           - jobs.publish-main-package.steps.[0].uses
         .github/workflows/ci.yaml:
           - jobs.build.steps.[0].uses
-      v3:
+      f43a0e5ff2bd294095638e18286ca9a3d1956744:
         .github/workflows/cd.yaml:
           - jobs.publish-crate.steps.[0].uses
         .github/workflows/ci.yaml:
           - jobs.checks.steps.[0].uses
   - action: actions/setup-node
     refs:
-      - v4
+      - 49933ea5288caeca8642d1e84afbd3f7d6820020
     occurrences:
-      v4:
+      49933ea5288caeca8642d1e84afbd3f7d6820020:
         .github/workflows/cd.yaml:
           - jobs.publish-binary.steps.[12].uses
           - jobs.publish-main-package.steps.[2].uses
