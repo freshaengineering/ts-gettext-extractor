@@ -84,7 +84,7 @@ jobs:
             sudo apt-get install -y --no-install-recommends \
               --allow-unauthenticated musl-tools
           fi
-      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
+      - uses: step-security/rust-cache@851174d9a2fdc03e0896e02844dcc61d81dd7851 # v2.9.1
         with:
           shared-key: ${{ matrix.build.TARGET }}-build
       - name: Install Rust toolchain
@@ -117,6 +117,6 @@ jobs:
           api-key: ${{ secrets.GH_FRESHAENGINEERING_STEP_SECURITY_API_KEY }}
 
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-      - uses: Swatinem/rust-cache@e18b497796c12c097a38f9edb9d0641fb99eee32 # v2
+      - uses: step-security/rust-cache@851174d9a2fdc03e0896e02844dcc61d81dd7851 # v2.9.1
       - run: cargo clippy --all-targets --all-features
       - run: cargo test
