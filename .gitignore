@@ -14,3 +14,5 @@ node_modules/
 
 # Copied during release
 /packages/ts-gettext-extractor/README.md
+
+.github/actions.lock.yaml

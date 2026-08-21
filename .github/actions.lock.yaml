@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-11T15:41:12Z
+generated_at: 2026-08-21T11:48:00Z
 internal: []
 trusted:
   - action: actions/checkout
@@ -9,63 +9,76 @@ trusted:
     occurrences:
       34e114876b0b11c390a56381ad16ebd13914f8d5:
         .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[0].uses
-          - jobs.publish-main-package.steps.[0].uses
+          - jobs.publish-binary.steps.[1].uses
+          - jobs.publish-main-package.steps.[1].uses
         .github/workflows/ci.yaml:
-          - jobs.build.steps.[0].uses
+          - jobs.build.steps.[1].uses
       f43a0e5ff2bd294095638e18286ca9a3d1956744:
         .github/workflows/cd.yaml:
-          - jobs.publish-crate.steps.[0].uses
+          - jobs.publish-crate.steps.[1].uses
         .github/workflows/ci.yaml:
-          - jobs.checks.steps.[0].uses
-  - action: actions/setup-node
-    refs:
-      - 49933ea5288caeca8642d1e84afbd3f7d6820020
-    occurrences:
-      49933ea5288caeca8642d1e84afbd3f7d6820020:
-        .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[12].uses
-          - jobs.publish-main-package.steps.[2].uses
+          - jobs.checks.steps.[1].uses
 external:
-  - action: actions-rs/cargo
+  - action: step-security/actions-rs-cargo
     refs:
-      - 844f36862e911db73fe0815f00a4a2602c279505
+      - 34f23e8d4bb3618bc5485c3341f2bf88024fc4dc
     occurrences:
-      844f36862e911db73fe0815f00a4a2602c279505:
+      34f23e8d4bb3618bc5485c3341f2bf88024fc4dc:
         .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[5].uses
+          - jobs.publish-binary.steps.[7].uses
+          - jobs.publish-binary.steps.[8].uses
+        .github/workflows/ci.yaml:
+          - jobs.build.steps.[5].uses
+          - jobs.build.steps.[6].uses
+  - action: step-security/actions-rs-toolchain
+    refs:
+      - 40a2f87e50bed6faa2d050e99810b226b75d8c8a
+    occurrences:
+      40a2f87e50bed6faa2d050e99810b226b75d8c8a:
+        .github/workflows/cd.yaml:
           - jobs.publish-binary.steps.[6].uses
         .github/workflows/ci.yaml:
           - jobs.build.steps.[4].uses
-          - jobs.build.steps.[5].uses
-  - action: actions-rs/toolchain
+  - action: step-security/harden-runner
     refs:
-      - 16499b5e05bf2e26879000db0c1d13f7e13fa3af
+      - 9af89fc71515a100421586dfdb3dc9c984fbf411
     occurrences:
-      16499b5e05bf2e26879000db0c1d13f7e13fa3af:
+      9af89fc71515a100421586dfdb3dc9c984fbf411:
         .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[4].uses
+          - jobs.publish-binary.steps.[0].uses
+          - jobs.publish-main-package.steps.[0].uses
+          - jobs.publish-crate.steps.[0].uses
+        .github/workflows/ci.yaml:
+          - jobs.build.steps.[0].uses
+          - jobs.checks.steps.[0].uses
+  - action: step-security/mise-action
+    refs:
+      - 2796166110dee826668caddd4bffedae5116e7cd
+    occurrences:
+      2796166110dee826668caddd4bffedae5116e7cd:
+        .github/workflows/cd.yaml:
+          - jobs.publish-binary.steps.[2].uses
+          - jobs.publish-main-package.steps.[2].uses
+  - action: step-security/rust-cache
+    refs:
+      - 851174d9a2fdc03e0896e02844dcc61d81dd7851
+    occurrences:
+      851174d9a2fdc03e0896e02844dcc61d81dd7851:
+        .github/workflows/cd.yaml:
+          - jobs.publish-binary.steps.[5].uses
+          - jobs.publish-crate.steps.[2].uses
         .github/workflows/ci.yaml:
           - jobs.build.steps.[3].uses
-  - action: svenstaro/upload-release-action
+          - jobs.checks.steps.[2].uses
+  - action: step-security/upload-release-action
     refs:
-      - 29e53e917877a24fad85510ded594ab3c9ca12de
+      - ecbc6042326f3a6f5a8c1c1202c4fa1b244db249
     occurrences:
-      29e53e917877a24fad85510ded594ab3c9ca12de:
+      ecbc6042326f3a6f5a8c1c1202c4fa1b244db249:
         .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[9].uses
-          - jobs.publish-binary.steps.[10].uses
-  - action: Swatinem/rust-cache
-    refs:
-      - e18b497796c12c097a38f9edb9d0641fb99eee32
-    occurrences:
-      e18b497796c12c097a38f9edb9d0641fb99eee32:
-        .github/workflows/cd.yaml:
-          - jobs.publish-binary.steps.[3].uses
-          - jobs.publish-crate.steps.[1].uses
-        .github/workflows/ci.yaml:
-          - jobs.build.steps.[2].uses
-          - jobs.checks.steps.[1].uses
+          - jobs.publish-binary.steps.[11].uses
+          - jobs.publish-binary.steps.[12].uses
 local: []
 docker: []
 dynamic: []
+nested_floating_deps: []
